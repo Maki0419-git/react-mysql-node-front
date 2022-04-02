@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Maki0419-git/react-mysql-node-front/static/css/main.f1a9efc0.css",
-    "main.js": "/Maki0419-git/react-mysql-node-front/static/js/main.2020f50e.js",
-    "static/js/787.12c7cba3.chunk.js": "/Maki0419-git/react-mysql-node-front/static/js/787.12c7cba3.chunk.js",
-    "index.html": "/Maki0419-git/react-mysql-node-front/index.html",
-    "main.f1a9efc0.css.map": "/Maki0419-git/react-mysql-node-front/static/css/main.f1a9efc0.css.map",
-    "main.2020f50e.js.map": "/Maki0419-git/react-mysql-node-front/static/js/main.2020f50e.js.map",
-    "787.12c7cba3.chunk.js.map": "/Maki0419-git/react-mysql-node-front/static/js/787.12c7cba3.chunk.js.map"
+    "main.css": "/react-mysql-node-front/static/css/main.f1a9efc0.css",
+    "main.js": "/react-mysql-node-front/static/js/main.379f5ae9.js",
+    "static/js/787.12c7cba3.chunk.js": "/react-mysql-node-front/static/js/787.12c7cba3.chunk.js",
+    "index.html": "/react-mysql-node-front/index.html",
+    "main.f1a9efc0.css.map": "/react-mysql-node-front/static/css/main.f1a9efc0.css.map",
+    "main.379f5ae9.js.map": "/react-mysql-node-front/static/js/main.379f5ae9.js.map",
+    "787.12c7cba3.chunk.js.map": "/react-mysql-node-front/static/js/787.12c7cba3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f1a9efc0.css",
-    "static/js/main.2020f50e.js"
+    "static/js/main.379f5ae9.js"
   ]
 }
