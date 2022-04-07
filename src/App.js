@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Context, userStatus as initial } from "./Context";
 import './App.css'
-import Tabel from './component/Table'
+import Tabel from './component/Table/Table'
 import Auth from './component/Auth'
 import Bar from './component/Bar'
 

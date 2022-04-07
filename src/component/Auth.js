@@ -21,16 +21,17 @@ const Login = () => {
 
     }
     return (
-        <div className="app">
-            <h2>{progress.toUpperCase()}</h2>
-            <div className="info">
+        <div className="auth">
+            <div className="form">
+                <h2 className="method">{progress.toUpperCase()}</h2>
+
                 <label>Account</label>
                 <input type="text"
                     value={account}
                     onChange={(e) => inputHandler(e, setAccount)}
                 />
                 <label>Password</label>
-                <input type="text"
+                <input type="password"
                     value={password}
                     onChange={(e) => inputHandler(e, setPassword)}
                 />

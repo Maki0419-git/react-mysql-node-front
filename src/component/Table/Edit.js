@@ -65,7 +65,7 @@ const Edit = ({ open, setOpen, readData, selectedItem, setSelectedItem }) => {
         <div id="myModal" className="modal" style={{ display }}>
             <div className="modal-content">
                 <TiDeleteOutline className="close" onClick={() => setOpen(false)} />
-                <div className="info">
+                <div className="modal-form">
                     <label>Name</label>
                     <input type="text"
                         value={name}

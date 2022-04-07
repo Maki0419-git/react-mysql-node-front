@@ -1,117 +1,176 @@
-body, h1, h2, h3, h4, h5, h6,button, input{
-    font-family:'Josefin Sans', sans-serif;
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input {
+    font-family: 'Josefin Sans', sans-serif;
 }
 
-.app{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  margin-top: 10vh;
+html,
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.15)), url('./background.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+    height: 100vh
 }
 
-.appbar{
-    position:fixed;
-    top:0;
-    width:100%;
-    height:10vh;
-    background-color:black;
-    display:flex;
-    align-items:center
+
+.auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
 }
 
-.appbar h1{
-    flex:5
+.appbar {
+    width: 100%;
+    height: 10vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+
 }
 
-.appbar div{
-    display:flex;
-    flex:5;
+.appbar h1 {
+    flex: 5
+}
+
+.appbar div {
+    display: flex;
+    flex: 5;
     justify-content: flex-end;
     /* width:15%; */
 }
 
-.appbar h1,h4{
-    color:white;
+.appbar h1,
+h4 {
+    color: white;
     margin: 2%;
     cursor: pointer;
 }
 
-.info{
-   display:flex;
-   flex-direction:column;
-   justify-content: center;
-   align-items:center;
-   margin-top:2vh;
+.method {
+    color: white;
 }
 
-.info input{
-    width:50%;
-    height:4vh;
-    margin:2%;
+.form {
+    display: flex;
+    flex-direction: column;
+    min-width: 60%;
 }
 
-.info button{
-    width:51%;
-    height:5vh;
-    margin:1% 0%;
-    padding:0%
+
+
+.form h2,
+label {
+    color: white;
 }
 
-.info button:hover{
+.form input {
+    height: 5vh;
+    margin-bottom: 4%;
+    border-radius: 4px;
+    border: 1px solid white;
+}
+
+.form input:focus {
+    outline: none !important;
+    border: 1px solid rgb(73, 148, 213);
+    box-shadow: 0 0 10px #719ECE;
+}
+
+.form button {
+    width: 100%;
+    height: 7vh;
+    font-size: 16px;
+    margin: 1% 0%;
+    padding: 0%;
+    color: #fff;
+    background-color: rgb(142, 195, 242);
+    box-shadow: 0 0 10px #719ECE;
+    border: 1px solid rgb(153, 203, 246);
+    border-radius: 15px
+}
+
+.form button:hover {
     cursor: pointer;
 }
 
-.info table{
 
-    width:80%;
-    border-collapse:separate;
-    border-spacing:0vh 3vh;
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
 }
 
-.info caption div{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+.info h2 {
+    color: #fff;
+}
+
+.info table {
+
+    width: 80%;
+    border-collapse: separate;
+    border-spacing: 0vh 3vh;
+}
+
+.info caption div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
 }
 
-.info caption{
+.info caption {
     position: relative;
     top: 20px
 }
 
-.info thead{
-   background:slategray;
-   color:white;
-   height:5vh;
-   text-align: left;
+.info thead {
+    background: slategray;
+    color: white;
+    height: 5vh;
+    text-align: left;
 }
 
-.info th{
-    padding:0vw 1.5vw;
+.info th {
+    padding: 0vw 1.5vw;
 }
 
-.info table .icon{
-    color:slategray;
+.info table .icon {
+    color: slategray;
     cursor: pointer;
 }
 
-.info tr{
+.info tr {
     box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 2px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-    height:10vh;
+    height: 10vh;
     border: 1px solid transparent;
-    border-radius:2px; 
+    border-radius: 2px;
 }
+
+.info tbody,
+tfoot tr {
+    background-color: white
+}
+
 
 .info tr:hover {
-    box-shadow: 3px 3px 5px  rgb(140, 153, 165);
+    box-shadow: 3px 3px 5px rgb(140, 153, 165);
     cursor: pointer;
-    transition:0.5s
+    transition: 0.5s
 }
 
-.info td{
-    margin:0;
-    padding:0vw 1.5vw;
+.info td {
+    margin: 0;
+    padding: 0vw 1.5vw;
     font-weight: 600;
 }
 
@@ -119,43 +178,87 @@ body, h1, h2, h3, h4, h5, h6,button, input{
 /* The Modal (background) */
 .modal {
     text-align: center;
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
 
-  /* Modal Content/Box */
+/* Modal Content/Box */
 .modal-content {
     position: relative;
     background-color: #fefefe;
-    margin: 10% auto; /* 15% from the top and centered */
-    padding: 2%;
+    margin: 5% auto;
+    /* 15% from the top and centered */
+    padding: 3%;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 50%;
+    /* Could be more or less, depending on screen size */
     border-radius: 5px;
     animation-name: topToDown;
-    animation-duration: 1s;  
+    animation-duration: 1s;
 }
-    @keyframes topToDown {
-        0%   {
-            transform:translateX(0%) translateY(-120%);
-        }
-        100% {
-            transform:translateX(0%) translateY(0%);
-        }
-    } 
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.modal-form label {
+    color: black;
+}
+
+.modal-form input[type="text"] {
+    height: 5vh;
+    width: 100%;
+    margin-bottom: 4%;
+    border-radius: 4px;
+    border: 1px solid black;
+}
 
 
-    .close{
-        position: absolute;
-        color:slategray;
-        top: 2%;
-        right: 2%;
-        font-size:20px;
-        cursor: pointer;
+.modal-content button {
+    width: 100%;
+    height: 5vh;
+    font-size: 16px;
+    margin: 1% 0%;
+    padding: 0%;
+    color: #fff;
+    background-color: rgb(112, 128, 144);
+    box-shadow: 0 0 10px rgba(112, 128, 144, 0.5);
+    border: 1px solid rgba(112, 128, 144, 0.5);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+@keyframes topToDown {
+    0% {
+        transform: translateX(0%) translateY(-120%);
     }
+
+    100% {
+        transform: translateX(0%) translateY(0%);
+    }
+}
+
+
+.close {
+    position: absolute;
+    color: slategray;
+    top: 2%;
+    right: 2%;
+    font-size: 20px;
+    cursor: pointer;
+}

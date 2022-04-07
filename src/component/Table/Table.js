@@ -84,6 +84,8 @@ const Table = () => {
                             <td></td>
                             <td></td>
                             <td>{employees.average[0].averageWage}</td>
+                            <td></td>
+                            <td></td>
                         </tr>
                     }
                 </tfoot>
