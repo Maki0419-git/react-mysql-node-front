@@ -8,7 +8,7 @@ axios.defaults.withCredentials = true;
 const register = (account, password) => new Promise(async (resolve, reject) => {
     const options = {
         method: 'POST',
-        url: `${domain}/api/v1/authorization/signup`,
+        url: `${domain}/api/v1/authenticate/signup`,
         headers: { 'Content-Type': 'application/json' },
         data: { account, password }
     };
@@ -29,7 +29,7 @@ const register = (account, password) => new Promise(async (resolve, reject) => {
 const login = (account, password) => new Promise(async (resolve, reject) => {
     const options = {
         method: 'POST',
-        url: `${domain}/api/v1/authorization/login`,
+        url: `${domain}/api/v1/authenticate/login`,
         headers: { 'Content-Type': 'application/json' },
         data: { account, password }
     };
@@ -50,7 +50,7 @@ const login = (account, password) => new Promise(async (resolve, reject) => {
 const logout = () => new Promise(async (resolve, reject) => {
     const options = {
         method: 'GET',
-        url: `${domain}/api/v1/authorization/logout`,
+        url: `${domain}/api/v1/authenticate/logout`,
     };
 
     axios.request(options).then((res) => resolve())
