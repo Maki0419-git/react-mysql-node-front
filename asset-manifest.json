@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/react-mysql-node-front/static/css/main.0de4358b.css",
-    "main.js": "/react-mysql-node-front/static/js/main.a2a49c54.js",
+    "main.css": "/react-mysql-node-front/static/css/main.237e8af6.css",
+    "main.js": "/react-mysql-node-front/static/js/main.db75e11d.js",
     "static/js/787.12c7cba3.chunk.js": "/react-mysql-node-front/static/js/787.12c7cba3.chunk.js",
     "static/media/background.jpg": "/react-mysql-node-front/static/media/background.e301fbefc7312cda341c.jpg",
     "index.html": "/react-mysql-node-front/index.html",
-    "main.0de4358b.css.map": "/react-mysql-node-front/static/css/main.0de4358b.css.map",
-    "main.a2a49c54.js.map": "/react-mysql-node-front/static/js/main.a2a49c54.js.map",
+    "main.237e8af6.css.map": "/react-mysql-node-front/static/css/main.237e8af6.css.map",
+    "main.db75e11d.js.map": "/react-mysql-node-front/static/js/main.db75e11d.js.map",
     "787.12c7cba3.chunk.js.map": "/react-mysql-node-front/static/js/787.12c7cba3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0de4358b.css",
-    "static/js/main.a2a49c54.js"
+    "static/css/main.237e8af6.css",
+    "static/js/main.db75e11d.js"
   ]
 }
