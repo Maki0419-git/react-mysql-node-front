@@ -1,10 +1,14 @@
 import axios from "axios";
 import jwt_decode from "jwt-decode"; //doc:https://www.npmjs.com/package/jwt-decode
+import { development, production } from "./setting";
+
+const domain = production
+axios.defaults.withCredentials = true;
 
 const register = (account, password) => new Promise(async (resolve, reject) => {
     const options = {
         method: 'POST',
-        url: 'https://react-node-mysql-heroku.herokuapp.com/api/v1/authorization/signup',
+        url: `${domain}/api/v1/authorization/signup`,
         headers: { 'Content-Type': 'application/json' },
         data: { account, password }
     };
@@ -13,8 +17,7 @@ const register = (account, password) => new Promise(async (resolve, reject) => {
         const { token } = response.data;
         if (token) {
             localStorage.setItem('token', token);
-            const { account } = jwt_decode(token);
-            resolve(account)
+            resolve()
         }
     } catch (e) {
         console.error(e.response)
@@ -26,7 +29,7 @@ const register = (account, password) => new Promise(async (resolve, reject) => {
 const login = (account, password) => new Promise(async (resolve, reject) => {
     const options = {
         method: 'POST',
-        url: 'https://react-node-mysql-heroku.herokuapp.com/api/v1/authorization/login',
+        url: `${domain}/api/v1/authorization/login`,
         headers: { 'Content-Type': 'application/json' },
         data: { account, password }
     };
@@ -36,8 +39,7 @@ const login = (account, password) => new Promise(async (resolve, reject) => {
         const { token } = response.data;
         if (token) {
             localStorage.setItem('token', token);
-            const { account } = jwt_decode(token);
-            resolve(account)
+            resolve()
         }
     } catch (e) {
         console.error(e.response)
@@ -45,23 +47,33 @@ const login = (account, password) => new Promise(async (resolve, reject) => {
     }
 })
 
-const authenticate = () => new Promise(async (resolve, reject) => {
-    const token = localStorage.getItem('token');
+const logout = () => new Promise(async (resolve, reject) => {
     const options = {
         method: 'GET',
-        url: 'https://react-node-mysql-heroku.herokuapp.com/api/v1/authenticate',
-        headers: {
-            Authorization: `Bearer ${token}`
-        }
+        url: `${domain}/api/v1/authorization/logout`,
+    };
+
+    axios.request(options).then((res) => resolve())
+        .catch((err) => reject(err.response.data.msg));
+
+})
+
+const authenticate = () => new Promise(async (resolve, reject) => {
+    const options = {
+        method: 'GET',
+        url: `${domain}/api/v1/authenticateUser`,
     };
     try {
-        await axios.request(options)
-        const { account } = jwt_decode(token);
-        resolve(account)
+        const response = await axios.request(options)
+        const { token } = response.data;
+        if (token) {
+            localStorage.setItem('token', token);
+            resolve()
+        }
     } catch (e) {
         reject(e.response.data.msg)
     }
 
 })
 
-export { register, authenticate, login }
+export { register, authenticate, login, logout }

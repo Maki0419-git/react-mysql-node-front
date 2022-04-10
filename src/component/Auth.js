@@ -13,8 +13,8 @@ const Login = () => {
     }
     const handleAuth = async () => {
         try {
-            const userAccount = progress === "register" ? await register(account, password) : await login(account, password);
-            myContext.setUserStatus({ isSignIn: true, progress: "authorized", userAccount });
+            const result = progress === "register" ? await register(account, password) : await login(account, password);
+            myContext.setUserStatus({ isSignIn: true, progress: "authorized" });
         } catch (e) {
             alert(e)
         }

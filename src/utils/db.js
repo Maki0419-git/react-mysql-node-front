@@ -1,11 +1,13 @@
 import axios from "axios";
+import { development, production } from "./setting";
 
+const domain = production
 
 const showEmployees = () => new Promise((resolve, reject) => {
     const token = localStorage.getItem('token');
     const options = {
         method: 'GET',
-        url: 'https://react-node-mysql-heroku.herokuapp.com/api/v1/employee/',
+        url: `${domain}/api/v1/employee/`,
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -23,7 +25,7 @@ const addEmployee = (name, age, country, position, wage) => new Promise((resolve
     const token = localStorage.getItem('token');
     const options = {
         method: 'POST',
-        url: 'https://react-node-mysql-heroku.herokuapp.com/api/v1/employee/',
+        url: `${domain}/api/v1/employee/`,
         headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`
@@ -42,7 +44,7 @@ const deleteEmployee = (employee_ID) => new Promise((resolve, reject) => {
     const token = localStorage.getItem('token');
     const options = {
         method: 'DELETE',
-        url: `https://react-node-mysql-heroku.herokuapp.com/api/v1/employee/${employee_ID}`,
+        url: `${domain}/api/v1/employee/${employee_ID}`,
         headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`
@@ -61,7 +63,7 @@ const editEmployee = (id, name, age, country, position, wage) => new Promise((re
     const token = localStorage.getItem('token');
     const options = {
         method: 'PUT',
-        url: `https://react-node-mysql-heroku.herokuapp.com/api/v1/employee/${id}`,
+        url: `${domain}/api/v1/employee/${id}`,
         headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`

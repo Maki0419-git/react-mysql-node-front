@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { AiOutlineUserDelete, AiOutlineUserAdd } from 'react-icons/ai'
 import { FaUserEdit } from 'react-icons/fa';
+import { FiRefreshCcw } from 'react-icons/fi';
 import Edit from './Edit';
 import '../../App.css';
 import { showEmployees, deleteEmployee } from '../../utils/db'
+import { authenticate } from '../../utils/auth'
 
 const Table = () => {
     const [employees, setEmployees] = useState({});
@@ -15,7 +17,11 @@ const Table = () => {
             const result = await showEmployees();
             setEmployees(result);
         } catch (err) {
-            alert(err)
+            if (err === 'jwt expired') {
+                alert('Please refresh your token')
+            } else {
+                alert(err)
+            }
         }
 
     }
@@ -25,7 +31,11 @@ const Table = () => {
             await deleteEmployee(employee_ID);
             readData();
         } catch (err) {
-            alert(err)
+            if (err === 'jwt expired') {
+                alert('Please refresh your token')
+            } else {
+                alert(err)
+            }
         }
     }
 
@@ -34,13 +44,20 @@ const Table = () => {
         setOpen(true);
     }
 
+    const handleRefresh = async () => {
+        try {
+            await authenticate();
+        } catch (err) {
+            alert(err)
+        }
+    }
     useEffect(() => {
         readData();
     }, [])
 
     return (
         <div className="info">
-
+            <div className="refresh-btn" onClick={handleRefresh}><FiRefreshCcw style={{ marginRight: 5 }} />refresh token</div>
             <table>
                 <caption><div><h2>Employee list</h2><AiOutlineUserAdd className="icon" onClick={() => setOpen(true)} /></div></caption>
                 <thead>

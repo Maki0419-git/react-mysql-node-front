@@ -29,7 +29,11 @@ const Edit = ({ open, setOpen, readData, selectedItem, setSelectedItem }) => {
             setOpen(false);
             readData();
         } catch (err) {
-            alert(err)
+            if (err === 'jwt expired') {
+                alert('Please refresh your token')
+            } else {
+                alert(err)
+            }
         }
     }
 
